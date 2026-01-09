@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smartphone Market — Interactive Dashboard (2022–2026)</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="left">
+      <h1>📱 Smartphone Market — Interactive Dashboard</h1>
+      <p class="subtitle">Switch modes, filter country & year, view live-ish data</p>
+    </div>
+
+    <div class="controls">
+      <label class="control">
+        Theme
+        <button id="themeToggle" class="chip">Toggle</button>
+      </label>
+
+      <label class="control">
+        Chart
+        <div class="segmented">
+          <button id="barBtn" class="seg active">Bar</button>
+          <button id="pieBtn" class="seg">Pie</button>
+        </div>
+      </label>
+
+      <label class="control">
+        Country
+        <select id="countrySelect" class="select">
+          <option value="Global">Global</option>
+          <option value="India">India</option>
+          <option value="USA">USA</option>
+          <option value="China">China</option>
+        </select>
+      </label>
+
+      <label class="control">
+        Year
+        <input id="yearRange" type="range" min="2022" max="2026" step="1" value="2025" />
+        <div id="yearLabel">2025</div>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section class="chart-area">
+      <canvas id="chartCanvas"></canvas>
+    </section>
+
+    <section class="info-row">
+      <div id="summaryCard" class="card">
+        <h3 id="topBrand">—</h3>
+        <p id="topDetail">Select a country/year</p>
+      </div>
+
+      <div class="card small">
+        <h4>Mode</h4>
+        <p id="modeLabel">Bar</p>
+      </div>
+
+      <div class="card small">
+        <h4>Data Source</h4>
+        <p id="sourceLabel">Demo / API</p>
+      </div>
+    </section>
+
+    <div id="toast" class="toast">Live data not available — using demo data</div>
+  </main>
+
+  <footer>
+    <small>Made with HTML • CSS • JavaScript • Chart.js</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
