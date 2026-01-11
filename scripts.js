@@ -1,4 +1,3 @@
-
 const ctx = document.getElementById('chartCanvas').getContext('2d');
 
 // ------- demo dataset structure: data[country][year] -> {labels:[], values:[]}
